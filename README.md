@@ -10,5 +10,5 @@
 
 ## [Projeto final:](./Projeto/README.md) 
 
-Apresente uma breve descrição do seu projeto.
+O trabalho final tem como tema o desenvolvimento de uma área administrativa para gerenciamento de uma loja.
 
