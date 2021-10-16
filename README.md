@@ -25,7 +25,7 @@ Backlog do sistema: https://docs.google.com/document/d/1rVsMkcLIuqateU6Zs3g6Z6ur
 Neste trabalho não serão considerados funções para venda real de produtos como cadastro de cartão de crédito, boleto ou qualquer forma de pagamento.
 
 4. Protótipo
-Protótipos para as páginas (descrever quais páginas) foram elaborados, e podem ser encontrados em...
+Protótipos para as páginas (descrever quais páginas) foram elaborados, e podem ser encontrados em https://www.figma.com/file/b7OIbHJoifxGTn3mWP2PIy/Projeto-Loja?node-id=0%3A1
 
 5. Referências
 Referências podem ser incluídas, caso necessário. Utilize o padrão ABNT.
