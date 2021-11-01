@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Atividade 04</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+</head>
+
+
+
+<body>
+    <header class="navbar">
+        <ul>
+            <a href="home.html"><li>Home</li></a>
+            <a href="estados.html"><li >Estados</li></a>
+            <a href="cidades.html"><li >Cidades</li></a>
+            <a href="produtos.html"><li>Produtos</li></a>
+            <a href="pessoas.html"><li id="active">Pessoas</li></a>
+            <a href="compras.html"><li>Compras</li></a>
+            <a href="perfil.html"><li>Perfil</li></a>
+            <a href="sair.html"><li>Sair</li></a>
+        </ul>
+    </header>
+
+    <div class="bg-image" style="background-image: url('https://images.unsplash.com/photo-1517732306149-e8f829eb588a?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cGVvcGxlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');"></div>
+
+    <div class="crud-menu">
+    <form class="cadastro-pessoas" method="POST" action="#" id="form">
+        <h1>Cadastrar nova pessoa</h1>
+        <ul>
+            <li> 
+                <input class="invalid" type="text" name="nome" id="nome" placeholder="Nome" required>
+            </li>
+            <li>              
+                <input class="invalid"  type="email" name="email" id="email" placeholder="E-mail" required>
+            </li>
+            <li>
+                <input class="invalid"  type="text" name="fone" id="fone" placeholder="Telefone" required>
+            </li>
+            <li>
+                <input class="invalid"  type="text" name="endereço" id="endereco" placeholder="Endereço" required>
+            </li> 
+            <li> 
+                    <select name="genero" id="genero" required>
+                    <option class="options" disabled selected>Gênero</option>
+                    <option class="options" value="F">Feminino</option>
+                    <option class="options" value="M">Masculino</option>
+                    <option class="options" value="NB">Não binário</option>
+                    <option class="options" value="SR">Prefiro não dizer</option>          
+            </li>
+            <li>
+                <input class="submit-form invalid" type="submit"  id="cadastrar" value="Cadastrar">
+            </li>  
+        </ul>  
+    </div> 
+
+    </form>
+    </div>
+
+    <script>
+        document.getElementById("form").addEventListener('keydown', function(){
+            nome = document.getElementById("nome");
+            email = document.getElementById("email");
+            fone = document.getElementById("fone");
+            endereco = document.getElementById("endereco");
+            button = document.getElementById("cadastrar");
+
+
+            let validation = 0;
+            if(nome.value.length > 1){
+                nome.classList.remove("invalid");
+                nome.classList.add("valid");
+                validation++;
+            } else if(nome.value.length < 1){
+                nome.classList.remove("valid");
+                nome.classList.add("invalid");
+                validation--;
+            }
+
+            if(email.value.length > 1){
+                email.classList.remove("invalid");
+                email.classList.add("valid");
+                validation++;
+            } else if(email.value.length < 1){
+                email.classList.remove("valid");
+                email.classList.add("invalid");
+                validation--;
+            }
+
+            if(fone.value.length > 1){
+                fone.classList.remove("invalid");
+                fone.classList.add("valid");
+                validation++;
+            } else if(fone.value.length < 1){
+                fone.classList.remove("valid");
+                fone.classList.add("invalid");
+                validation--;
+            }
+
+            if(endereco.value.length > 1){
+                endereco.classList.remove("invalid");
+                endereco.classList.add("valid");
+                validation++;
+            } else if(endereco.value.length < 1){
+                endereco.classList.remove("valid");
+                endereco.classList.add("invalid");
+                validation--;
+            }
+
+            if(validation >= 4){
+                button.classList.remove("invalid");
+                button.classList.add("valid");
+            } else if(validation < 4){
+                button.classList.remove("valid");
+                button.classList.add("invalid");
+            }
+
+
+        
+        });
+    </script>
+   
+
+    
+</body>
+</html>
