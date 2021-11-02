@@ -23,7 +23,7 @@
     <div class="menu d-flex align-items-start shadow-lg p-3 mb-5 bg-body rounded">
       <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
 
-        <button class="nav-link" id="v-pills-banco-tab" data-bs-toggle="pill" data-bs-target="#v-pills-banco" type="button" role="tab" aria-controls="v-pills-banco" aria-selected="false">
+        <button class="nav-link active" id="v-pills-banco-tab" data-bs-toggle="pill" data-bs-target="#v-pills-banco" type="button" role="tab" aria-controls="v-pills-banco" aria-selected="false">
           <svg class="me-2" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-banco-fill" viewBox="0 0 16 16">
             <path d="M6.375 7.125V4.658h1.78c.973 0 1.542.457 1.542 1.237 0 .802-.604 1.23-1.764 1.23H6.375zm0 3.762h1.898c1.184 0 1.81-.48 1.81-1.377 0-.885-.65-1.348-1.886-1.348H6.375v2.725z"/>
             <path d="M4.002 0a4 4 0 0 0-4 4v8a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4V4a4 4 0 0 0-4-4h-8zm1.06 12V3.545h3.399c1.587 0 2.543.809 2.543 2.11 0 .884-.65 1.675-1.483 1.816v.1c1.143.117 1.904.931 1.904 2.033 0 1.488-1.084 2.396-2.888 2.396H5.062z"/>
@@ -43,7 +43,7 @@
               <path d="M4 10.781c.148 1.667 1.513 2.85 3.591 3.003V15h1.043v-1.216c2.27-.179 3.678-1.438 3.678-3.3 0-1.59-.947-2.51-2.956-3.028l-.722-.187V3.467c1.122.11 1.879.714 2.07 1.616h1.47c-.166-1.6-1.54-2.748-3.54-2.875V1H7.591v1.233c-1.939.23-3.27 1.472-3.27 3.156 0 1.454.966 2.483 2.661 2.917l.61.162v4.031c-1.149-.17-1.94-.8-2.131-1.718H4zm3.391-3.836c-1.043-.263-1.6-.825-1.6-1.616 0-.944.704-1.641 1.8-1.828v3.495l-.2-.05zm1.591 1.872c1.287.323 1.852.859 1.852 1.769 0 1.097-.826 1.828-2.2 1.939V8.73l.348.086z"/>
             </svg>Depositar</button>
 
-          <button class="nav-link active" id="v-pills-pagar-tab" data-bs-toggle="pill" data-bs-target="#v-pills-pagar" type="button" role="tab" aria-controls="v-pills-pagar" aria-selected="true">
+          <button class="nav-link" id="v-pills-pagar-tab" data-bs-toggle="pill" data-bs-target="#v-pills-pagar" type="button" role="tab" aria-controls="v-pills-pagar" aria-selected="true">
             <svg class="me-2"  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-credit-card" viewBox="0 0 16 16">
               <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1H2zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V7z"/>
               <path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-1z"/>
@@ -57,17 +57,28 @@
               <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
             </svg>Perfil</button>
           
-          <button class="nav-link" id="v-pills-sair-tab" data-bs-toggle="pill" data-bs-target="#v-pills-sair" type="button" role="tab" aria-controls="v-pills-sair" aria-selected="false">
-            <svg class="me-2" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
-              <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
-              <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
-            </svg>Sair</button>
+          
        
       </div>
 
     <div class="tab-content" id="v-pills-tabContent">
 
-      <div class="crud tab-pane fade show" id="v-pills-historico" role="tabpanel" aria-labelledby="v-pills-hisotrico-tab">
+      <div class="crud tab-pane fade show active" id="v-pills-banco" role="tabpanel" aria-labelledby="v-pills-banco-tab">
+        <div class="d-grid gap-2 col-6 mx-auto shadow-lg p-3 mb-5 bg-body rounded">
+          <img src="https://images.unsplash.com/photo-1601597111158-2fceff292cdc?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YmFua3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" class="img-fluid" alt="banco">
+          <div class="container ">
+                        <div class="row">
+                          <p>Bem-vindo ao Gerenciador de PIX! </p>
+                          <p>Nesse sistema você poderá ver seu saldo e depositar dinheiro em sua conta atráves da aba <b>depositar</b></p>
+                          <p>Na aba <b>pagar,</b> você pode enviar PIX para outras pessoas, as transações de depósitos e pagamentos que você fizer podem ser vistas no <b>histórico</b></p>
+                        </div>
+                        
+                      
+          </div>
+        </div>
+      </div>
+
+      <div class="crud tab-pane fade show" id="v-pills-historico" role="tabpanel" aria-labelledby="v-pills-historico-tab">
         <div class="d-grid gap-2 col-6 mx-auto shadow-lg p-3 mb-5 bg-body rounded">
           <div class="container ">
                         <div class="row">
@@ -120,7 +131,7 @@
       </div>
         
 
-        <div class="crud tab-pane fade show active" id="v-pills-pagar" role="tabpanel" aria-labelledby="v-pills-pagar-tab">
+        <div class="crud tab-pane fade show " id="v-pills-pagar" role="tabpanel" aria-labelledby="v-pills-pagar-tab">
           <div class="d-grid gap-2 col-6 mx-auto shadow-lg p-3 mb-5 bg-body rounded">
               <img src="https://images.unsplash.com/photo-1591030434469-3d78c7b17820?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80" class="img-fluid" alt="pagar">
             <div class="container" id="pagar_pix" onchange="verifica()">
@@ -143,7 +154,7 @@
                                         <path d="M4 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
                                         </svg></span>
 
-                                    <input type="text" data-mask="000.000.000-00" class="form-control" placeholder="Escolha o tipo de chave" id="chave" onkeyup="insereChave()"disabled>
+                                    <input type="text" class="form-control" placeholder="Escolha o tipo de chave" id="chave" onkeyup="insereChave()"disabled>
                                 </div>
                         </div>
 
@@ -154,6 +165,14 @@
                                     <input type="text" value="0" id="pix" class="form-control" placeholder="Valor"  min="0" step="1"  onkeyup="insereValor()" disabled>
                                     
                                   </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="input-group mb-2">
+                                <select name="bancos" id="bancos"  class="form-select"> 
+                                    <option value="0">Selecione o banco: </option>
+                                </select>
+                            </div>
                         </div>
 
                         <div class="row">
@@ -169,6 +188,37 @@
                                 <button type="button" id="enviarPix" class="btn btn-primary" onclick="enviaPix()" disabled>Enviar</button>
                             </div>
                         </div>
+                        
+            </div>
+          </div>
+        </div>
+
+
+        <div class="crud tab-pane fade show" id="v-pills-perfil" role="tabpanel" aria-labelledby="v-pills-perfil-tab">
+          <div class="d-grid gap-2 col-6 mx-auto shadow-lg p-3 mb-5 bg-body rounded">
+            <img src="https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cHJvZmlsZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" class="img-fluid" alt="banco">
+            <div class="container ">
+
+                          <div class="row mb-2">
+                            <div class="input-group">
+                              <span class="input-group-text" id="basic-addon1"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                              </svg></span>
+                              <input type="text" class="form-control" placeholder="Meu perfil" readonly>
+                            </div> 
+                          </div>
+
+                          <div class="row">
+                            <div class="input-group">
+                              <span class="input-group-text" id="basic-addon1"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-key" viewBox="0 0 16 16">
+                                <path d="M0 8a4 4 0 0 1 7.465-2H14a.5.5 0 0 1 .354.146l1.5 1.5a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0L13 9.207l-.646.647a.5.5 0 0 1-.708 0L11 9.207l-.646.647a.5.5 0 0 1-.708 0L9 9.207l-.646.647A.5.5 0 0 1 8 10h-.535A4 4 0 0 1 0 8zm4-3a3 3 0 1 0 2.712 4.285A.5.5 0 0 1 7.163 9h.63l.853-.854a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.793-.793-1-1h-6.63a.5.5 0 0 1-.451-.285A3 3 0 0 0 4 5z"/>
+                                <path d="M4 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+                                </svg></span>
+                              <input type="text" class="form-control" placeholder="Minha chave" >
+                            </div>                 
+                          </div>
+                          
                         
             </div>
           </div>

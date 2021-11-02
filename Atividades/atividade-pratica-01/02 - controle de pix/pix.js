@@ -5,9 +5,30 @@ document.addEventListener("DOMContentLoaded", function (){
     saldo_usuario = saldo.value;
 
     var chave= document.querySelector("#chave");
+
+    fetch("https://brasilapi.com.br/api/banks/v1")
+                .then(response => response.json())
+                .then(data => preencheSelect(data) )
+            .catch(error => console.error(error))
     
     
 });
+
+function preencheSelect(data){
+
+    let bancos = document.getElementById("bancos");
+
+    for( let index in data) {
+        
+        const { name  } = data[index];
+
+        let option = document.createElement("option");
+        option.value = name;
+        option.innerHTML = `${name}`;
+
+        bancos.appendChild(option);
+    }
+}
 
 function depositar(){
     var saldo = document.querySelector("#saldo");
@@ -82,10 +103,11 @@ function verifica(){
     var select = document.getElementById('tipoChave');
     var tipoChave = select.options[select.selectedIndex].value;
     var valor = document.getElementById('pix');
+    var chave = document.getElementById('chave')
     
-    if(valor.value != 0 && tipoChave != 0){
+    if(valor.value != 0 && tipoChave != 0 && chave.value.length > 3){
         document.querySelector("#enviarPix").removeAttribute("disabled");
-    } else if(valor.value == 0 || tipoChave == 0) {
+    } else if(valor.value == 0 || tipoChave == 0 || chave.value.length < 3) {
         document.querySelector("#enviarPix").setAttribute("disabled", "disabled");
     }
 }
@@ -93,6 +115,9 @@ function verifica(){
 function enviaPix(){
 
     dataAtual = new Date();
+
+    var selectBanco = document.getElementById('bancos');
+    var banco = selectBanco.options[selectBanco.selectedIndex].value;
 
     var select = document.getElementById('tipoChave');
     var valor = document.getElementById('pix');
@@ -105,8 +130,17 @@ function enviaPix(){
     var dataPix = new Date(partesData[0], partesData[1] -1, partesData[2]);
     
     dataCompara = new Date(dataAtual.getFullYear(), dataAtual.getMonth(), dataAtual.getDay());
-    
-    if(dataPix < dataCompara || data.value== ''){
+
+
+    if(chave.value == ""){
+
+        alert("Insira a chave do recebedor!");
+
+    }   else if(banco == 0){
+
+        alert("Selecione o banco do recebedor!");
+
+    }   else if(dataPix < dataCompara || data.value== ''){
 
         alert("Data inválida!");
 
@@ -139,6 +173,7 @@ function enviaPix(){
         select.value = 0;
         chave.value = "";
         valor.value = 0;
+        selectBanco.value = 0;
         valor.setAttribute("disabled", "disabled");
         chave.setAttribute("disabled", "disabled");
         data.setAttribute("disabled", "disabled");
