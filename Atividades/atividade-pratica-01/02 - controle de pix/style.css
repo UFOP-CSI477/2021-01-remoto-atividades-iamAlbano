@@ -1,0 +1,31 @@
+.body{
+    height: 100%;
+    display: flex;
+  }
+  .menu{
+    display: flex;
+    height: 100vh;
+    position: absolute;
+    width: 15%;
+  }
+
+  .nav button{
+    width: 10em;
+    text-align: left;
+  }
+
+  .crud {
+    width: 700px;
+    margin-left: 200px;
+    position: relative;
+  }
+
+  .invalid {
+    border: 1px solid red;
+  }
+
+ 
+
+  #historico {
+    height: 70vh;
+  }

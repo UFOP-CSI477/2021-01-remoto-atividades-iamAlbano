@@ -1,0 +1,34 @@
+@font-face {
+    font-family: 'DIGI';
+    src: url('DS-DIGI.ttf') format('truetype');
+  }
+
+
+
+.btn {
+    width: 3em;
+    height: 3em;
+    margin: 0.15em;
+}
+
+.equal {
+    width: 6.65em;
+    margin: 0.12em;
+}
+
+
+
+.bg-black {
+    background-color:black;
+    }
+
+#visor {
+    font-family: 'DIGI';
+    color: blanchedalmond;
+    font-size: 30pt;
+}
+
+.bg-visor {
+    height: 4em;
+    background-image: linear-gradient(to bottom right, rgba(30, 31, 46, 0.445), rgb(25, 25, 26));
+}
