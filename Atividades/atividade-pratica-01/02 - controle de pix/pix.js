@@ -69,20 +69,44 @@ function selectPix(){
 
     var select = document.getElementById('tipoChave');
     var tipoChave = select.options[select.selectedIndex].value;
-    if(tipoChave != 0){
-        document.querySelector("#chave").removeAttribute("disabled");
-        document.querySelector("#chave").placeholder = "Insira a chave pix";
-    } else if(tipoChave == 0){
-        document.querySelector("#chave").setAttribute("disabled", "disabled");
-        document.querySelector("#chave").placeholder = "Escolha o tipo de chave";
+    var input = document.getElementById("input-chave");
+
+
+    if(tipoChave == 1){
+        input.innerHTML = `<input type="text" class="form-control" placeholder="Insira o CPF" id="chave" onkeyup="insereChave()" onkeypress="$(this).mask('000.000.000-00');">`;
+    } 
+    else if(tipoChave == 2){
+        input.innerHTML = `<input type="text" class="form-control" placeholder="Insira o CNPJ" id="chave" onkeyup="insereChave()" onkeypress="$(this).mask('00.000.000/0000-00')">`;
+    }
+    else if(tipoChave == 3){
+        input.innerHTML = `<input type="text" class="form-control" placeholder="Insira o número de telefone" id="chave" onkeyup="insereChave()" onkeypress="$(this).mask('(00) 0000-00009')">`;
+    }  
+    else if(tipoChave == 0){
+        input.innerHTML = `<input type="text" class="form-control" placeholder="Escolha o tipo de chave" id="chave" onkeyup="insereChave()"disabled>`;
+    }
+
+    else {
+        input.innerHTML = `<input type="text" class="form-control" placeholder="Insira a chave" id="chave" onkeyup="insereChave()">`;
     }
 }
 
 function insereChave(){
     var chave = document.getElementById('chave');
-    if(chave.value.length > 3){
+    var select = document.getElementById('tipoChave');
+    var tipoChave = select.options[select.selectedIndex].value;
+
+    if(tipoChave == 1 && chave.value.length > 13){
         document.querySelector("#pix").removeAttribute("disabled");
-    } else {
+    } else if(tipoChave == 2 && chave.value.length > 17){
+        document.querySelector("#pix").removeAttribute("disabled");
+    }
+    else if(tipoChave == 3 && chave.value.length > 13){
+        document.querySelector("#pix").removeAttribute("disabled");
+    }
+    else if(tipoChave != 0 && chave.value.length > 4){
+        document.querySelector("#pix").removeAttribute("disabled");
+    } 
+    else {
         document.querySelector("#pix").setAttribute("disabled", "disabled");
     }
 }
