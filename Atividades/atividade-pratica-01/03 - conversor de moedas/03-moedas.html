@@ -19,37 +19,42 @@
 <body class="bg-dark">  
     <div id="box" class="position-absolute top-50 start-50 translate-middle shadow-lg p-3 mb-5 bg-body rounded ">
         
-        <div class="container">
+        <div class="container" onchange="chamaConversor()" onkeyup="chamaConversor()">
             <p>Conversor de moedas</p>
             <hr>
             
             <div class="row mb-3">
-                <div class="col">
+                <div class="col-3">
+                    <label for="moeda1" class="form-label">Valor</label>
+                    <div class="input-group">
+                        <span class="input-group-text" id="basic-addon1">R$</span>
+                        <input type="number" class="form-control" value="1" step="0.1" id="valor1">
+                    </div>
+                    
+                </div>
+                <div class="col-4">
                     <label for="moeda1" class="form-label">Converter de </label>
-                    <select name="moeda1" id="moeda1"  class="form-select"> 
-                        <option value="">Moeda1 </option>
+                    <select name="moeda1" id="moeda1"  class="form-select" disabled> 
+                        <option selected value="BRL">Real Brasileiro</option>
                     </select>
                 </div>
-                <div class="col">
+                <div class="col-5">
                     <label for="moeda2" class="form-label">Para </label>
                     <select name="moeda2" id="moeda2"  class="form-select"> 
-                        <option value="">Moeda2</option>
+                        <option value="BRL">Real Brasileiro</option>
+                        
                     </select>
                 </div>
             </div>
 
             <div class="row">
+                
                 <div class="col">
                     <div class="input-group mb-2">
-                        <span class="input-group-text" id="basic-addon1">$</span>
-                        <input type="number" class="form-control" value="0" step="0.1">
-                      </div>
-                </div>
-                <div class="col">
-                    <div class="input-group mb-2">
-                        <span class="input-group-text" id="basic-addon1">$</span>
-                        <input type="number" class="form-control" value="0" step="0.1">
-                      </div>
+                        <span class="input-group-text" id="basic-addon1">Resultado:</span>
+                        <input type="number" class="form-control" value="0" step="0.1" id="valor2" readonly>
+                    </div>
+                    
                 </div>
             </div>
         
