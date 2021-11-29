@@ -3,7 +3,7 @@
 
 @include('menu')
 <hr>
-<h1 class="title text-center">Pesquisa de produtos</h1>
+<h1 class="title text-center">Pesquisa de estados</h1>
 
 <div class="screen shadow-lg bg-body rounded position-absolute top-50 start-50 translate-middle">
     <div class="input-group mb-3">
@@ -12,7 +12,7 @@
             <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
             </svg>
         </span>
-    <form action="/procura-produto" method="GET">
+    <form action="/procura-estado" method="GET">
     @csrf
         <input type="text" class="form-control" name="nome" id="nome"
         placeholder="Pesquisar por nome" aria-label="Pesquisar por nome" aria-describedby="basic-addon1">

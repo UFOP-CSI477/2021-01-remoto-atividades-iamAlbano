@@ -2,12 +2,18 @@
     color: white;
 }
 
-.tabela {
-    height: 20em;
+.table {
+   
+    height: 10em;
     width: 30em;
 }
 
 .screen {
     padding: 3em;
+}
+
+.todos-produtos {
+    
+    height: 25em;
 }
 

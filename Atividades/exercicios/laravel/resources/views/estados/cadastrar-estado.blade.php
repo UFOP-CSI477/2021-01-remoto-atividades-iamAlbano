@@ -3,19 +3,19 @@
 
 @include('menu')
 <hr>
-<h1 class="title text-center">Cadastrar produto</h1>
+<h1 class="title text-center">Cadastrar Estado</h1>
 
 <div class="screen shadow-lg bg-body rounded position-absolute top-50 start-50 translate-middle">
-    <form action="{{route('produtos.store')}}" method="POST">
+    <form action="{{route('estados.store')}}" method="POST">
         @csrf
         <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1">Nome do produto</span>
+            <span class="input-group-text" id="basic-addon1">Nome do estado</span>
             <input id="nome" name="nome" type="text" class="form-control" aria-describedby="basic-addon1" maxlength="100" required>
         </div>
         
         <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1">Unidade de medida</span>
-            <input id="um" name="um" type="text" class="form-control" aria-describedby="basic-addon1" maxlength="3" required>
+            <span class="input-group-text" id="basic-addon1">Sigla</span>
+            <input id="sigla" name="sigla" type="text" class="form-control" aria-describedby="basic-addon1" maxlength="2" required>
         </div>
 
         <div class="text-center">

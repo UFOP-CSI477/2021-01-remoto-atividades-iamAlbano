@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\DB;
 use App\Models\Produto;
 use Illuminate\Http\Request;
 
@@ -14,8 +14,8 @@ class ProdutoController extends Controller
      */
     public function index()
     {
-        $produtos = Produto::orderBy('nome')->get();
-        return view('produtos.index', ['produtos' => $produtos]);
+        $produtos = Produto::orderBy('updated_at', 'desc')->get();
+        return view('produtos.todos-produtos', ['produtos' => $produtos]);
     }
 
     /**
@@ -25,7 +25,7 @@ class ProdutoController extends Controller
      */
     public function create()
     {
-        //
+        return view('produtos.cadastrar-produto'); 
     }
 
     /**
@@ -36,7 +36,11 @@ class ProdutoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $produto = New Produto;
+        $produto->nome = $request->nome;
+        $produto->um = $request->um;
+        $produto->save();
+        return redirect()->route('produtos.index');
     }
 
     /**
@@ -47,7 +51,7 @@ class ProdutoController extends Controller
      */
     public function show(Produto $produto)
     {
-        //
+       //
     }
 
     /**
@@ -58,7 +62,7 @@ class ProdutoController extends Controller
      */
     public function edit(Produto $produto)
     {
-        //
+        return view('produtos.edita-produto', ['produto' => $produto]);
     }
 
     /**
@@ -70,7 +74,12 @@ class ProdutoController extends Controller
      */
     public function update(Request $request, Produto $produto)
     {
-        //
+        DB::table('produtos')->updateOrInsert(
+            ['id' => $request->id],
+            ['nome' => $request->nome, 'um' => $request->um]
+        );
+
+        return redirect()->route('produtos.index');
     }
 
     /**
@@ -81,6 +90,16 @@ class ProdutoController extends Controller
      */
     public function destroy(Produto $produto)
     {
-        //
+        $produto->delete();
+        return redirect()->route('produtos.index');
+    }
+
+    public function pesquisa(){
+        return view('produtos.pesquisa');
+    }
+
+    public function procurar(Request $request){
+        $produto = Produto::where('nome', $request->nome)->get();
+        return view('produtos.produto', ['produto' => $produto[0]]);
     }
 }

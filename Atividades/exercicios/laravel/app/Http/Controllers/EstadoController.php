@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\DB;
 use App\Models\Estado;
 use Illuminate\Http\Request;
 
@@ -14,7 +14,8 @@ class EstadoController extends Controller
      */
     public function index()
     {
-        
+        $estados = Estado::orderBy('updated_at', 'desc')->get();
+        return view('estados.todos-estados', ['estados' => $estados]);
     }
 
     /**
@@ -24,7 +25,7 @@ class EstadoController extends Controller
      */
     public function create()
     {
-        //
+        return view('estados.cadastrar-estado'); 
     }
 
     /**
@@ -35,7 +36,11 @@ class EstadoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $estado = new Estado;
+        $estado->nome = $request->nome;
+        $estado->sigla = $request->sigla;
+        $estado->save();
+        return redirect()->route('estados.index');
     }
 
     /**
@@ -57,7 +62,7 @@ class EstadoController extends Controller
      */
     public function edit(Estado $estado)
     {
-        //
+        return view('estados.edita-estado', ['estado' => $estado]);
     }
 
     /**
@@ -69,7 +74,12 @@ class EstadoController extends Controller
      */
     public function update(Request $request, Estado $estado)
     {
-        //
+        DB::table('estados')->updateOrInsert(
+            ['id' => $request->id],
+            ['nome' => $request->nome, 'sigla' => $request->sigla]
+        );
+
+        return redirect()->route('estados.index');
     }
 
     /**
@@ -80,6 +90,16 @@ class EstadoController extends Controller
      */
     public function destroy(Estado $estado)
     {
-        //
+        $estado->delete();
+        return redirect()->route('estados.index');
+    }
+
+    public function pesquisa(){
+        return view('estados.pesquisa');
+    }
+
+    public function procurar(Request $request){
+        $estado = Estado::where('nome', $request->nome)->get();
+        return view('estados.estado', ['estado' => $estado[0]]);
     }
 }

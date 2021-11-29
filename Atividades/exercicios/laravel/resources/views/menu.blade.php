@@ -14,8 +14,7 @@
           
         <li class="nav-item">
           <a class="nav-link
-          " aria-current="page" href="#"
-          >Home</a>
+          " aria-current="page" href="{{route('inicio')}}">Home</a>
         </li>
 
         <ul class="navbar-nav">
@@ -25,9 +24,9 @@
               Produtos
             </a>
             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-              <li><a class="dropdown-item" href="#">Cadastrar</a></li>
+              <li><a class="dropdown-item" href="{{route('produtos.create')}}">Cadastrar</a></li>
               <li><a class="dropdown-item" href="/pesquisa-produto">Pesquisar</a></li>
-              <li><a class="dropdown-item" href="#">Visualizar</a></li>
+              <li><a class="dropdown-item" href="{{route('produtos.index')}}">Visualizar todos</a></li>
             </ul>
           </li>
         </ul>
@@ -39,9 +38,9 @@
               Estados
             </a>
             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-              <li><a class="dropdown-item" href="#">Cadastrar</a></li>
-              <li><a class="dropdown-item" href="#">Pesquisar</a></li>
-              <li><a class="dropdown-item" href="#">Visualizar</a></li>
+              <li><a class="dropdown-item" href="{{route('estados.create')}}">Cadastrar</a></li>
+              <li><a class="dropdown-item" href="/pesquisa-estado">Pesquisar</a></li>
+              <li><a class="dropdown-item" href="{{route('estados.index')}}">Visualizar todos</a></li>
             </ul>
           </li>
         </ul>
@@ -55,7 +54,7 @@
             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
               <li><a class="dropdown-item" href="#">Cadastrar</a></li>
               <li><a class="dropdown-item" href="#">Pesquisar</a></li>
-              <li><a class="dropdown-item" href="#">Visualizar</a></li>
+              <li><a class="dropdown-item" href="#">Visualizar todos</a></li>
             </ul>
           </li>
         </ul>
