@@ -32,7 +32,7 @@
             </svg>Vendas</button></a>
 
             
-        <hr id="divider" class="blank">
+     
 
             <a href="/user/profile" class="text-decoration-none">
             <button class="nav-link @if($tab == 'perfil') show active @endif" id="v-pills-perfil-tab" data-bs-toggle="pill" data-bs-target="#v-pills-perfil" type="button" role="tab" aria-controls="v-pills-perfil" aria-selected="false">

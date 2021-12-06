@@ -5,13 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Estado extends Model
+class Cidade extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['nome', 'sigla'];
+    protected $fillable = [ 'nome', 'estado_id' ];
 
-    public function cidades(){
-        return $this->hasMany(Cidade::class);
+    public function estado(){
+        return $this->belongsTo(Estado::class);
     }
 }

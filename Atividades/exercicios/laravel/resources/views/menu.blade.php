@@ -52,9 +52,9 @@
               Cidades
             </a>
             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-              <li><a class="dropdown-item" href="#">Cadastrar</a></li>
-              <li><a class="dropdown-item" href="#">Pesquisar</a></li>
-              <li><a class="dropdown-item" href="#">Visualizar todos</a></li>
+              <li><a class="dropdown-item" href="{{route('cidades.create')}}">Cadastrar</a></li>
+              <li><a class="dropdown-item" href="/pesquisa-cidade">Pesquisar</a></li>
+              <li><a class="dropdown-item" href="{{route('cidades.index')}}">Visualizar todos</a></li>
             </ul>
           </li>
         </ul>
