@@ -16,7 +16,7 @@ Resumo
 
 1. Tema
 O trabalho final tem como tema o desenvolvimento de uma área administrativa para gerenciamento de uma loja.
-Caso não haja nenhum usuário cadastrado no sistema, a aplicação web exibirá uma tela para configuração inicial da loja, tal como seleção de tipo de mercado, nome do negócio e logomarca. Após a configuração inicial, será exibida uma tela onde o administrador master poderá cadastrar outros administrador e estes poderão editar informações da loja, como as citadas anteriormente, além de localização física se existir e número de telefone e demais formas de contato. Os administradores também poderão adicionar e remover produtos da loja em um "depósito virtual", onde poderão verificar e gerenciar a quantidade de produtos em estoque e quantidade vendida além de gerenciar as informações do produto como nome, fotos, descrição e preço.
+Caso não haja nenhum usuário cadastrado no sistema, o novo usuário vai se cadastrar e então será redirecionado a uma tela onde o administrador master poderá cadastrar outros administrador e estes poderão editar informações de produtos e clientes. Os administradores poderão adicionar e remover produtos da loja em um "depósito virtual", onde poderão verificar e gerenciar a quantidade de produtos em estoque além de gerenciar as informações do produto como nome, fotos, descrição e preço.
 
 2. Escopo
 Backlog do sistema: https://docs.google.com/document/d/1rVsMkcLIuqateU6Zs3g6Z6uraFCduvXHVsyRcUIfPEM/edit?usp=sharing
