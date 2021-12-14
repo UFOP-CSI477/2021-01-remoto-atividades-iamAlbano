@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class requests extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['user_id', 'subject_id', 'person', 'description', 'date'];
+
+    public function subject(){
+        return $this->belongsTo(Subject::class);
+    }
 }

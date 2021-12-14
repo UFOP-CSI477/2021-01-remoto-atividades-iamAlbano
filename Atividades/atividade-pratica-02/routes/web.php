@@ -1,6 +1,9 @@
 <?php
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RequestController;
+use App\Http\Controllers\SubjectController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,9 +17,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $subjects = DB::table('subjects')->orderBy('name', 'asc')->get();
+    return view('geral', ['subjects' => $subjects]);
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
+    return view('geral');
 })->name('dashboard');
+
+Route::resource('/request', RequestController::class)->middleware('auth');
+
+Route::resource('/subject', SubjectController::class)->middleware('auth');
+Route::get('/subjects', [ SubjectController::class, 'index'])->middleware('auth');
+Route::get('/subjectsTable', [ SubjectController::class, 'table'])->middleware('auth');
