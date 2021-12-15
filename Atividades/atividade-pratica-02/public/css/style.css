@@ -3,3 +3,31 @@
     width: 90vh;
     border-top: 0.1em solid white;
 }
+
+.modal-backdrop {
+    z-index: -1;
+  }
+
+  .alert {
+    width: 90vh;
+    margin: auto;
+}
+
+.progress{
+    position: relative;
+}
+
+.progress .progress-bar{
+    margin: auto;
+    position: absolute;
+    height: 20px;
+    animation: progress-animation 6s infinite;
+ }
+ 
+ 
+ @keyframes progress-animation{
+     from  { width: 100%; }
+    to     { width: 0%}
+     
+     
+ }

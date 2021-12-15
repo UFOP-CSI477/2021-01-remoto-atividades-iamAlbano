@@ -27,6 +27,12 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 Route::resource('/request', RequestController::class)->middleware('auth');
 
-Route::resource('/subject', SubjectController::class)->middleware('auth');
 Route::get('/subjects', [ SubjectController::class, 'index'])->middleware('auth');
+
+Route::get('/subjects/new', function () {
+    return view('subjects.novo');
+})->middleware('auth');
+
+Route::post('/subjects', [ SubjectController::class, 'store'])->middleware('auth');
 Route::get('/subjectsTable', [ SubjectController::class, 'table'])->middleware('auth');
+Route::delete('/subjects/destroy/{id}', [SubjectController::class, 'destroy'])->middleware('auth');

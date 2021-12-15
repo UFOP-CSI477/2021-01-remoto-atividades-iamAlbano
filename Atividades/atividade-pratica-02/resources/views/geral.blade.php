@@ -5,7 +5,7 @@
 
 <table class="table">
   <thead>
-    <tr class="sticky-top">
+    <tr class="sticky-top bg bg-light">
       <th scope="col">id</th>
       <th scope="col">Nome</th>
       <th scope="col">Preço</th>

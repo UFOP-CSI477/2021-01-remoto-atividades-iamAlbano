@@ -18,11 +18,23 @@
           <a class="nav-link dropdown-toggle
           @if($active == 2)active @endif"
            href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Administrativo
+            Tipos
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="/requests">Protocolos</a></li>
-            <li><a class="dropdown-item" href="/subjects">Tipos de protocolos</a></li>   
+            <li><a class="dropdown-item" href="/subjects/new">Cadastrar novo</a></li>
+            <li><a class="dropdown-item" href="/subjects">Visualizar todos</a></li>   
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle
+          @if($active == 3)active @endif"
+           href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Protocolos
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="/">Cadastrar novo</a></li>
+            <li><a class="dropdown-item" href="/subjects">Visualizar todos</a></li>   
           </ul>
         </li>
       </ul>
