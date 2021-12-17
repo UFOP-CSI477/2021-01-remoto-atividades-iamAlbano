@@ -34,5 +34,8 @@ Route::get('/subjects/new', function () {
 })->middleware('auth');
 
 Route::post('/subjects', [ SubjectController::class, 'store'])->middleware('auth');
+
+Route::get('/subjects/edit/{id}', [ SubjectController::class, 'edit'])->middleware('auth');
+Route::post('/subjects/update/{id}', [ SubjectController::class, 'update'])->middleware('auth');
 Route::get('/subjectsTable', [ SubjectController::class, 'table'])->middleware('auth');
 Route::delete('/subjects/destroy/{id}', [SubjectController::class, 'destroy'])->middleware('auth');
