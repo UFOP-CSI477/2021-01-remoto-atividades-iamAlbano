@@ -62,7 +62,7 @@ class SubjectController extends Controller
 
             $html .= '
             <tr class="align-middle">
-            <td class="text-centerj">'.$subject->id.'</td>
+            <td class="text-center">'.$subject->id.'</td>
             <td>'.$subject->name.'</td>
             <td>R$ '.$subject->price.'</td>
 

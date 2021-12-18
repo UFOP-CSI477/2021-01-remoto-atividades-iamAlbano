@@ -33,8 +33,20 @@
             Protocolos
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="/">Cadastrar novo</a></li>
-            <li><a class="dropdown-item" href="/subjects">Visualizar todos</a></li>   
+            <li><a class="dropdown-item" href="/subjects/new">Cadastrar novo</a></li>
+            <li><a class="dropdown-item" href="/requests">Visualizar todos</a></li>   
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle
+          @if($active == 4)active @endif"
+           href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Relatórios
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="/reports/users">Usuários</a></li>
+            <li><a class="dropdown-item" href="/reports/requests">Protocolos</a></li>   
           </ul>
         </li>
       </ul>

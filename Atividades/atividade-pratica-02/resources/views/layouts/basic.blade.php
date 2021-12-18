@@ -22,7 +22,14 @@
     @endif
 
     
-    <div class="conteudo bg bg-light position-absolute top-50 start-50 translate-middle border border-5 shadow-lg overflow-scroll">
+    <div class=" 
+    conteudo
+    @if($active == 3 || $active == 4)
+      conteudo-lg
+    @else
+      conteudo-sm
+    @endif
+    bg bg-light position-absolute top-50 start-50 translate-middle border border-5 shadow-lg overflow-scroll">
       @yield('content')
     </div>
 

@@ -1,7 +1,14 @@
 .conteudo {
-    height: 60vh;
-    width: 90vh;
+    height: 60vh; 
     border-top: 0.1em solid white;
+}
+
+.conteudo-sm {
+    width: 80vh;
+}
+
+.conteudo-lg {
+    width: 180vh; 
 }
 
 .modal-backdrop {
