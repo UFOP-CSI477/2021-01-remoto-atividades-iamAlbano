@@ -4,8 +4,8 @@
 
 
       <div class="form-floating mb-2">
-        <input type="text" class="form-control" id="floatingInput" onkeyup="pesquisa()" placeholder="pesquisar">
-        <label for="floatingInput">Pesquisar</label>
+        <input type="text" class="form-control" id="requestSearch" onkeyup="pesquisa()" placeholder="pesquisar">
+        <label for="requestSearch">Pesquisar por pessoa responsável</label>
       </div>
     
 
@@ -59,7 +59,7 @@
   
   function pesquisa(){
 
-    var search = $('#floatingInput').val();
+    var search = $('#requestSearch').val();
     
     var data = {
       word: search,

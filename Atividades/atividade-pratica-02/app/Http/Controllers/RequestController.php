@@ -60,7 +60,7 @@ class RequestController extends Controller
         if(strlen($search) < 2){
             $requests = DB::table('requests')->orderBy('date', 'asc')->get();
         } else {
-            $requests = Request::where([['id', 'like', '%'.$search.'%']])->get();
+            $requests = R::where([['person', 'like', '%'.$search.'%']])->get();
         }
 
 
