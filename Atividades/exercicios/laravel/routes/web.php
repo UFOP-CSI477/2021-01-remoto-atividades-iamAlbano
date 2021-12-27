@@ -11,14 +11,19 @@ Route::get('/', function () {
 })->name('inicio');
 
 
-Route::resource('/produtos', ProdutoController::class);
-Route::get('/pesquisa-produto', [ProdutoController::class, 'pesquisa']);
-Route::get('/procura-produto', [ProdutoController::class, 'procurar']);
+Route::resource('/produtos', ProdutoController::class)->middleware('auth');
+Route::get('/pesquisa-produto', [ProdutoController::class, 'pesquisa'])->middleware('auth');
+Route::get('/procura-produto', [ProdutoController::class, 'procurar'])->middleware('auth');
 
 Route::resource('/estados', EstadoController::class);
-Route::get('/pesquisa-estado', [EstadoController::class, 'pesquisa']);
-Route::get('/procura-estado', [EstadoController::class, 'procurar']);
+Route::get('/pesquisa-estado', [EstadoController::class, 'pesquisa'])->middleware('auth');
+Route::get('/procura-estado', [EstadoController::class, 'procurar'])->middleware('auth');
 
-Route::resource('/cidades', CidadeController::class);
-Route::get('/pesquisa-cidade', [CidadeController::class, 'pesquisa']);
-Route::get('/procura-cidade', [CidadeController::class, 'procurar']);
+Route::resource('/cidades', CidadeController::class)->middleware('auth');
+Route::get('/pesquisa-cidade', [CidadeController::class, 'pesquisa'])->middleware('auth');
+Route::get('/procura-cidade', [CidadeController::class, 'procurar'])->middleware('auth');
+
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');

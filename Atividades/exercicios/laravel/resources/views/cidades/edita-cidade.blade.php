@@ -37,7 +37,7 @@
 
                         <td>
                             <div class="input-group mb-4">
-                            <select class="form-select" name="estados_id" id="estados_id" aria-label="Default select example">
+                            <select class="form-select" name="estado_id" id="estado_id" aria-label="Default select example">
                                 @foreach($estados as $estado)
                                 <option value="{{$estado->id}}"
                                 @if($cidade->estado_id == $estado->id)

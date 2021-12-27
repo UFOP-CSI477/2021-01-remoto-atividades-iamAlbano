@@ -11,7 +11,11 @@ class Product extends Model
 
     protected $guarded = [];
 
-    public function user(){
+    public function category(){
         return $this->belongsTo('App\Models\Category');
+    }
+
+    public function selling(){
+        return $this->belongsTo('App\Models\Selling');
     }
 }

@@ -3,7 +3,7 @@
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-header" >
-                <h5 class="modal-title">Cadastro de venda</h5> 
+                <h5 class="modal-title">Cadastro de compra</h5> 
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -12,7 +12,7 @@
                         <button class="nav-link active" id="pills-compra-tab" data-bs-toggle="pill" data-bs-target="#pills-compra" type="button" role="tab" aria-controls="pills-home" aria-selected="true">
                         <svg class="crud-icon me-2" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
                         <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-                        </svg>Venda</button>
+                        </svg>Compra</button>
                     </li>
 
                     <li class="nav-item" role="presentation">
@@ -37,14 +37,14 @@
                                 <div class="row p-2">
                                     <div class="col-md-5">
                                         <label for="supplier" class="form-label">
-                                            Comprador
+                                            Fornecedor
                                             
                                             <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
                                             </svg>
                                         </label>
                                         <select id="supplier" name="supplier" class="form-select" aria-label="Default select example">
                                 
-                                            @foreach($people as $person)
+                                            @foreach($suppliers as $person)
                                             <option value="{{$person->id}}">{{$person->name}}</option>
                                             @endforeach
                                         </select>
@@ -61,7 +61,7 @@
                                     </div>
 
                                     <div class="col-md-3 ">
-                                        <label for="supplier" class="form-label">
+                                        <label for="" class="form-label">
                                             Situação          
                                         </label>
                                         <select id="situation" name="situation" class="form-select" aria-label="Default select example">
@@ -152,7 +152,7 @@
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
                             <button type="submit" class="btn btn-success" 
-                            @if(count($people) == 0)disabled @endif>Cadastrar</button>
+                            @if(count($suppliers) == 0)disabled @endif>Cadastrar</button>
                         </div>
              </form>
             </div>

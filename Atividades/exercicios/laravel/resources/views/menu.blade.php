@@ -60,6 +60,25 @@
         </ul>
         
       </ul>
+
+      <form class="d-flex">
+        
+    @if(Auth::check())
+        <form action="{{ route('logout') }}" method="POST">
+                @csrf
+                <button class="btn btn-primary me-5" href="{{ route('logout') }}"
+                onclick="event.preventDefault();
+                this.closest('form').submit();"
+                >Sair</button>
+        </form>
+    @endif
+    
+    @guest
+        <a class="btn btn-outline-primary me-3" type="submit" href="/login">Entrar</a>
+        <a class="btn btn-primary me-5" type="submit" href="/register">Cadastrar</a>
+    @endguest
+
+      </form>
     </div>
   </div>
 </nav>

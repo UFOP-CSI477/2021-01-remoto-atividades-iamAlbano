@@ -14,8 +14,8 @@
       </div>
       <div class="modal-body">
 
-      <h5 class="text-start">Você não cadastrou nenhuma pessoa!</h5>
-      <p class="text-start">Cadastre uma pessoa na aba de pessoas para então poder cadastrar uma nova venda.</p>
+      <h5 class="text-start">Você não cadastrou nenhum Fornecedor!</h5>
+      <p class="text-start">Cadastre uma fornecedor na aba de pessoas para então poder cadastrar uma nova compra.</p>
 
     
       </div>

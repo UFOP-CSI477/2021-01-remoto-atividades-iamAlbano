@@ -19,7 +19,7 @@ class BuyController extends Controller
     'categoria' => $categoria,
     'tab' => "compras",
     'buys' => $this->all_info(),
-    'people' => $this->all_people(),
+    'suppliers' => $this->all_people(),
     'products' => $this->all_products(),
     'inputs' => $this->all_inputs(),
     'buy_inputs' => $this->all_buy_inputs(),
@@ -100,6 +100,7 @@ class BuyController extends Controller
     private function all_people(){
 
         $person = DB::table('people')
+        ->where('category', '=', 'Fornecedor')
         ->latest('people.updated_at')
         ->join('contacts', function ($join) {
             $join->on('people.id', '=', 'contacts.person_id'); })

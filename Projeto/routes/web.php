@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PersonController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\BuyController;
-
+use App\Http\Controllers\SellingController;
 
 Route::get('/', function () {
     return redirect('/login');
@@ -35,6 +35,15 @@ Route::get('/compras/table_inputs', [BuyController::class, 'table_inputs'])->mid
 Route::post('/compras', [BuyController::class, 'store'])->middleware('auth');
 Route::put('/compras/update/{id}', [BuyController::class, 'update'])->middleware('auth');
 Route::delete('/compras/{id}', [BuyController::class, 'destroy'])->middleware('auth');
+
+//Vendas
+Route::get('/vendas', [SellingController::class, 'index'])->middleware('auth');
+Route::get('/vendas/table', [SellingController::class, 'table'])->middleware('auth');
+Route::get('/vendass/table_inputs', [SellingController::class, 'table_inputs'])->middleware('auth');
+Route::post('/vendas', [SellingController::class, 'store'])->middleware('auth');
+Route::put('/vendas/update/{id}', [SellingController::class, 'update'])->middleware('auth');
+Route::delete('/vendas/{id}', [SellingController::class, 'destroy'])->middleware('auth');
+
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return redirect('/pessoas');

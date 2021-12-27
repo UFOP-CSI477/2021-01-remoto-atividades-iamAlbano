@@ -3,7 +3,7 @@
 
     <tr>
     <th scope="col">nº</th>
-      <th scope="col">Comprador</th>
+      <th scope="col">Fornecedor</th>
       <th scope="col">Contato</th>
       <th scope="col">Data da compra</th>
       <th scope="col">Data de entrega</th>
