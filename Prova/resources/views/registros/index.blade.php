@@ -12,8 +12,42 @@
           </div>
           
         <div class="col">   
-            <input type="text" class="form-control" id="registroSearch" onkeyup="pesquisa()" placeholder="pesquisar">
+            <div class="input-group mb-3">
+            <label class="input-group-text" for="inputGroupSelect01">Pessoa</label>
+            <select class="form-select" id="pessoaSearch" onchange="pesquisa()">
+                <option value="Todos" selected>Todos</option>
+                @foreach($pessoas as $pessoa)
+                    <option value="{{$pessoa->id}}">{{$pessoa->nome}}</option>
+                @endforeach
+            </select>
+            </div>
         </div>
+
+        <div class="col">   
+            <div class="input-group mb-3">
+            <label class="input-group-text" for="inputGroupSelect01">Unidade</label>
+            <select class="form-select" id="unidadeSearch" onchange="pesquisa()">
+                <option value="Todos" selected>Todas</option>
+                @foreach($unidades as $unidade)
+                    <option value="{{$unidade->id}}">{{$unidade->nome}}</option>
+                @endforeach
+            </select>
+            </div>
+        </div>
+
+        <div class="col">   
+            <div class="input-group mb-3">
+            <label class="input-group-text" for="inputGroupSelect01">Vacina</label>
+            <select class="form-select" id="vacinaSearch" onchange="pesquisa()">
+                <option value="Todos" selected>Todas</option>
+                @foreach($vacinas as $vacina)
+                    <option value="{{$vacina->id}}">{{$vacina->nome}}</option>
+                @endforeach
+            </select>
+            </div>
+        </div>
+
+        
 
         <div class="col">
             <button type="button" data-bs-toggle="modal" data-bs-target="#nova" 
@@ -221,10 +255,14 @@
 <script>
   
   function pesquisa(){
-    var search = $('#registroSearch').val();
-    
+    var pessoa = $('#pessoaSearch option:selected').val();
+    var unidade = $('#unidadeSearch option:selected').val();
+    var vacina = $('#vacinaSearch option:selected').val();
+
     var data = {
-      word: search,
+      pessoa: pessoa,
+      unidade: unidade,
+      vacina: vacina,
     }
     $.get("{!! url('registrosTable')!!}", data, function(table){
           $(".tabela").html(table)

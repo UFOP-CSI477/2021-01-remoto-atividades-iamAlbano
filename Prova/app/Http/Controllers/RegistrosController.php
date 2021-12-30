@@ -117,18 +117,35 @@ class RegistrosController extends Controller
 
     public function table(){
 
-        $search = filter_input(INPUT_GET, 'word', FILTER_SANITIZE_STRING);
-
-        if(strlen($search) < 2){
-            $registros = Registro::orderBy('data', 'desc')->get();
-        } else {
-            $registros = Registro::where([['id', 'like', '%'.$search.'%']])->orderBy('data', 'desc')->get();
-        }
+        $pessoa = filter_input(INPUT_GET, 'pessoa', FILTER_SANITIZE_STRING);
+        $unidade = filter_input(INPUT_GET, 'unidade', FILTER_SANITIZE_STRING);
+        $vacina = filter_input(INPUT_GET, 'vacina', FILTER_SANITIZE_STRING);
+        
+        $registros = Registro::orderBy('data', 'desc')->get();
+        
 
 
         $html = " ";
 
         foreach($registros as $registro){
+
+            if($pessoa != 'Todos'){
+                if(Pessoa::find($registro->pessoa_id)->id != $pessoa){
+                    continue;
+                }
+            }
+
+            if($unidade != 'Todos'){
+                if(Unidade::find($registro->unidade_id)->id != $unidade){
+                    continue;
+                }
+            }
+
+            if($vacina != 'Todos'){
+                if(Vacina::find($registro->vacina_id)->id != $vacina){
+                    continue;
+                }
+            }
 
             $html .= '
             <tr class="align-middle">
