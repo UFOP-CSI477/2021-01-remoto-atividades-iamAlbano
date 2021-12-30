@@ -8,11 +8,11 @@
       
       <div class="form-floating mb-2 row p-3 text-center">
         <div class="col">
-              <h3>Pessoas</h3>
+              <h3>Registros</h3>
           </div>
           
         <div class="col">   
-            <input type="text" class="form-control" id="pessoaSearch" onkeyup="pesquisa()" placeholder="pesquisar">
+            <input type="text" class="form-control" id="registroSearch" onkeyup="pesquisa()" placeholder="pesquisar">
         </div>
 
         <div class="col">
@@ -22,7 +22,7 @@
             <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
             <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
             </svg>
-            Nova pessoa</button>
+            Novo registro</button>
         </div>
       </div>
     
@@ -32,9 +32,10 @@
         <thead class="sticky-top ">
             <tr class="bg bg-light ">
             <th scope="col" class="text-center">id</th>
-            <th scope="col">Nome</th>
-            <th scope="col">Data de nascimento</th>
-            <th scope="col">CPF</th>
+            <th scope="col">Pessoa</th>
+            <th scope="col">Unidade</th>
+            <th scope="col">Vacina</th>
+            <th scope="col">Data</th>
             <th scope="col" class="text-center" >Editar</th>
             <th scope="col" class="text-center">Excluir</th>
             </tr>
@@ -53,30 +54,47 @@
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Cadastrar nova pessoa</h5>
+        <h5 class="modal-title" id="staticBackdropLabel">Cadastrar novo registro</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
       
-      <form action="{{ route('pessoas.store')}}" method="post">
+      <form action="{{ route('registros.store')}}" method="post">
         @csrf
         <div class="container">
         
         <div class="row">
             <div class="col input-group mb-3">
-              <span class="input-group-text">Nome</span>
-              <input type="text" class="form-control" id="nome" name="nome" required>
+                <label class="input-group-text" for="inputGroupSelect01">Pessoa </label>
+                <select class="form-select" id="pessoa" name="pessoa">
+                    @foreach($pessoas as $pessoa)
+                    <option value="{{$pessoa->id}}">{{$pessoa->nome}}</option>
+                    @endforeach
+                </select>
+            </div>
+
+            <div class="col input-group mb-3">
+                <label class="input-group-text" for="inputGroupSelect01">Vacina</label>
+                <select class="form-select" id="vacina" name="vacina">
+                    @foreach($vacinas as $vacina)
+                    <option value="{{$vacina->id}}">{{$vacina->nome}}</option>
+                    @endforeach
+                </select>
             </div>
         </div>
 
         <div class="row">
             <div class="col input-group mb-3">
-              <span class="input-group-text">CPF</span>
-              <input type="text" class="form-control" id="cpf" name="cpf" onkeypress="$(this).mask('000.000.000-00');" required>
+                <label class="input-group-text" for="inputGroupSelect01">Unidade</label>
+                <select class="form-select" id="unidade" name="unidade">
+                    @foreach($unidades as $unidade)
+                    <option value="{{$unidade->id}}">{{$unidade->nome}}</option>
+                    @endforeach
+                </select>
             </div>
 
             <div class="col input-group mb-3">
-              <span class="input-group-text">Data de nascimento</span>
+              <span class="input-group-text">Data</span>
               <input type="date" class="form-control" id="data" name="data" required>
             </div>
         </div>
@@ -95,39 +113,61 @@
   </div>
 </div>
 
-@foreach($pessoas as $pessoa)
+@foreach($registros as $registro)
 <!-- Modal -->
-<div class="modal fade" id="edit-{{$pessoa->id}}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade" id="edit-{{$registro->id}}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Editar pessoa</h5>
+        <h5 class="modal-title" id="staticBackdropLabel">Editar registro</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
       
-      <form action="{{ route('pessoas.update', $pessoa->id)}}" method="post">
+      <form action="{{ route('registros.update', $registro->id)}}" method="post">
         @csrf
         @method('PUT')
         <div class="container">
         
         <div class="row">
             <div class="col input-group mb-3">
-              <span class="input-group-text">Nome</span>
-              <input type="text" class="form-control" id="nome" name="nome" value="{{$pessoa->nome}}" placeholder="{{$pessoa->nome}}" required>
+                <label class="input-group-text" for="inputGroupSelect01">Pessoa </label>
+                <select class="form-select" id="pessoa" name="pessoa">
+                    @foreach($pessoas as $pessoa)
+                    <option value="{{$pessoa->id}}"
+                    @if($registro->pessoa_id == $pessoa->id) selected @endif
+                    >{{$pessoa->nome}}</option>
+                    @endforeach
+                </select>
+            </div>
+
+            <div class="col input-group mb-3">
+                <label class="input-group-text" for="inputGroupSelect01">Vacina</label>
+                <select class="form-select" id="vacina" name="vacina">
+                    @foreach($vacinas as $vacina)
+                    <option value="{{$vacina->id}}"
+                    @if($registro->vacina_id == $vacina->id) selected @endif
+                    >{{$vacina->nome}}</option>
+                    @endforeach
+                </select>
             </div>
         </div>
 
         <div class="row">
             <div class="col input-group mb-3">
-              <span class="input-group-text">CPF</span>
-              <input type="text" class="form-control" id="cpf" name="cpf" value="{{$pessoa->cpf}}" 
-              placeholder="{{$pessoa->cpf}}" onkeypress="$(this).mask('000.000.000-00');" required>
+                <label class="input-group-text" for="inputGroupSelect01">Unidade</label>
+                <select class="form-select" id="unidade" name="unidade">
+                    @foreach($unidades as $unidade)
+                    <option value="{{$unidade->id}}"
+                    @if($registro->unidade_id == $unidade->id) selected @endif
+                    >{{$unidade->nome}}</option>
+                    @endforeach
+                </select>
             </div>
 
             <div class="col input-group mb-3">
-              <span class="input-group-text">Data de nascimento</span>
-              <input type="date" class="form-control" id="data" name="data" value="{{$pessoa->data_nascimento}}"required>
+              <span class="input-group-text">Data</span>
+              <input type="date" value="{{$registro->data}}" class="form-control" id="data" name="data" required>
             </div>
         </div>
           
@@ -152,21 +192,21 @@
 
 
 
-@foreach($pessoas as $pessoa)
+@foreach($registros as $registro)
 <!-- Modal -->
-<div class="modal fade" id="delete-{{$pessoa->id}}" aria-labelledby="exampleModalLabel" tabindex="-1"  aria-hidden="true" data-bs-backdrop="static">
+<div class="modal fade" id="delete-{{$registro->id}}" aria-labelledby="exampleModalLabel" tabindex="-1"  aria-hidden="true" data-bs-backdrop="static">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Excluir pessoa</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Excluir registro</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        Tem certeza que deseja excluir {{$pessoa->nome}}?
+        Tem certeza que deseja excluir {{$registro->nome}}?
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Cancelar</button>
-        <form action="{{ route('pessoas.destroy', $pessoa->id )}}" method="post">
+        <form action="{{ route('registros.destroy', $registro->id )}}" method="post">
           @csrf
           @method('DELETE')
           <button type="submit" class="btn btn-outline-danger">Excluir</button>
@@ -181,12 +221,12 @@
 <script>
   
   function pesquisa(){
-    var search = $('#pessoaSearch').val();
+    var search = $('#registroSearch').val();
     
     var data = {
       word: search,
     }
-    $.get("{!! url('pessoasTable')!!}", data, function(table){
+    $.get("{!! url('registrosTable')!!}", data, function(table){
           $(".tabela").html(table)
       });
   }

@@ -7,7 +7,11 @@
     <div class="bg bg-light position-absolute top-50 start-50 translate-middle border border-5 conteudo conteudo-lg overflow-scroll">
 
       <div class="form-floating mb-2 row p-3 text-center">
-        <div class="col">   
+        <div class="col">
+            <h3>Vacinas</h3>
+        </div>
+      
+       <div class="col">   
             <input type="text" class="form-control" id="vacinaSearch" onkeyup="pesquisa()" placeholder="pesquisar">
         </div>
 

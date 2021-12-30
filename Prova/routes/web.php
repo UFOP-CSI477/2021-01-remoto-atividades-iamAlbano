@@ -5,6 +5,7 @@ use App\Http\Controllers\GeralController;
 use App\Http\Controllers\PessoasController;
 use App\Http\Controllers\VacinasController;
 use App\Http\Controllers\UnidadesController;
+use App\Http\Controllers\RegistrosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +32,9 @@ Route::get('/vacinasTable', [ VacinasController::class, 'table'])->middleware('a
 
 Route::resource('/unidades', UnidadesController::class)->middleware('auth');
 Route::get('/unidadesTable', [ UnidadesController::class, 'table'])->middleware('auth');
+
+Route::resource('/registros', RegistrosController::class)->middleware('auth');
+Route::get('/registrosTable', [ RegistrosController::class, 'table'])->middleware('auth');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('inicial', ['active' => 1]);
