@@ -1,6 +1,6 @@
 # **CSI606-2021-01 - Remoto - Trabalho Final**
 
-## Aluno: Guilherme Lage Albano (Darth Vader)
+## Aluno: Guilherme Lage Albano - 19.1.8055
 
 --------------
 
@@ -78,13 +78,10 @@
     Alterar informações da loja: Não foram implementadas informações da loja como nome, cnpj e tipo de mercado pois faltou tempo.
     Adicionar imagem dos produtos: Não é possível adicionar imagens aos produtos pois segui as aulas para implementar o sistema e como não houve uma aula sobre manipulação de      imagens, acabou que não implementei por falta de tempo de pesquisar e aprender por outra forma
 
-### 3. Outras funcionalidades implementadas
-<!-- Descrever as funcionalidades implementas além daquelas que foram previstas, caso se aplique.  -->
-
-### 4. Principais desafios e dificuldades
+### 3. Principais desafios e dificuldades
 Grande complexidade do sistema com diversas implementações que necessitam de depêndencia uma das outras.
 
-### 5. Instruções para instalação e execução
+### 4. Instruções para instalação e execução
     Para instalar e executar o sistema em seu computador, será necessário ter instalado: Composer, Laravel, node, npm e um banco de dados de sua preferência.
     Passo a passo:
     1. Após clonar ou baixar os arquivos na sua máquina, acesse a pasta do projeto pelo terminal do seu computador (pode ser pelo VSCode).
