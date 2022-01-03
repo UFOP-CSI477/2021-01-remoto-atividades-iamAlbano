@@ -24,13 +24,16 @@
 <!-- Apresentar restrições de funcionalidades e de escopo. -->
 ### 3. Restrições
 
-  Neste trabalho não serão considerados ...
+  Restrições Neste trabalho não serão considerados funções para venda real de produtos como cadastro de cartão de crédito, boleto ou qualquer forma de pagamento.
 
 <!-- Construir alguns protótipos para a aplicação, disponibilizá-los no Github e descrever o que foi considerado. //-->
 ### 4. Protótipo
 
-  Protótipos para as páginas (descrever quais páginas) foram elaborados, e podem ser encontrados em...
+  Protótipo Protótipos para as páginas de cadastro de administrador, configurações da loja e contato e gerenciamento de produtos foram elaborados no figma, e podem ser         encontrados em https://www.figma.com/file/b7OIbHJoifxGTn3mWP2PIy/Projeto-Loja?node-id=0%3A1
 
 ### 5. Referências
 
   Referências podem ser incluídas, caso necessário. Utilize o padrão ABNT.
+  
+  ### 6. Apresentação
+    Link do vídeo https://www.youtube.com/watch?v=Tm7aE4SpgiE
