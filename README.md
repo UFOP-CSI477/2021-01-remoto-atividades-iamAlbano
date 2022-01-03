@@ -27,6 +27,6 @@ Neste trabalho não serão considerados funções para venda real de produtos co
 4. Protótipo
 Protótipos para as páginas de cadastro de administrador, configurações da loja e contato e gerenciamento de produtos foram elaborados no figma, e podem ser encontrados em https://www.figma.com/file/b7OIbHJoifxGTn3mWP2PIy/Projeto-Loja?node-id=0%3A1
 
-5. Referências
-Referências podem ser incluídas, caso necessário. Utilize o padrão ABNT.
+5. Link do vídeo
+https://www.youtube.com/watch?v=Tm7aE4SpgiE
 
