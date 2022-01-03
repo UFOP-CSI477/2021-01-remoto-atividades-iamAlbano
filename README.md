@@ -12,11 +12,11 @@
 
 
 Resumo
-Área administrativa de produtos, onde um usuário administrador pode se cadastrar e cadastrar outros administradores. Estes usuários serão capazes de adicionar e remover produtos de um catálogo, podendo editar informações como fotos, nome preço e descrição do produto. Além disso será possível visualizar quantidade disponível em estoque e quantidade vendida de cada produto.
+Área administrativa de produtos, onde um usuário administrador pode se cadastrar e cadastrar outras pessoas. Este usuário será capaz de adicionar e remover produtos de um catálogo, podendo editar informações como nome, preço e descrição do produto. Além disso será possível visualizar quantidade disponível em estoque e informações da venda e compra.
 
 1. Tema
 O trabalho final tem como tema o desenvolvimento de uma área administrativa para gerenciamento de uma loja.
-Caso não haja nenhum usuário cadastrado no sistema, o novo usuário pode criar uma conta e então será redirecionado a uma tela onde o administrador master poderá cadastrar outros administrador e estes poderão editar informações de produtos e clientes. Os administradores poderão adicionar e remover produtos da loja em um "depósito virtual", onde poderão verificar e gerenciar a quantidade de produtos em estoque além de gerenciar as informações do produto como nome, fotos, descrição e preço.
+Caso não haja nenhum usuário cadastrado no sistema, o novo usuário pode criar uma conta e então será redirecionado a uma tela onde o administrador master poderá cadastrar outras pessoas, será possível editar informações de produtos, fornecedores e clientes. Os administradores poderão adicionar e remover produtos da loja em um "depósito virtual", onde poderão verificar e gerenciar a quantidade de produtos em estoque além de gerenciar as informações do produto como nome, fotos, descrição e preço.
 
 2. Escopo
 Backlog do sistema: https://docs.google.com/document/d/1rVsMkcLIuqateU6Zs3g6Z6uraFCduvXHVsyRcUIfPEM/edit?usp=sharing
