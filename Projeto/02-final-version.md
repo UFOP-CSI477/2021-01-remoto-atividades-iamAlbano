@@ -1,5 +1,5 @@
 # **CSI606-2021-01 - Remoto - Trabalho Final - Resultados**
-## *Aluna(o): Princesa Leia (Luke Skywalker)*
+## *Aluno: Guilherme lage Albano (Luke Skywalker)*
 
 --------------
 
